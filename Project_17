@@ -2,7 +2,7 @@
 using namespace std;
 
 double clac(double num1, double num2, char operation) {
-	if (num2 == 0 || operation == '/') cout << "ÄÅËÈÒÜ ÍÀ ÍÎËÜ ÍÅËÜÇß!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+	if (num2 == 0 || operation == '/') cout << "Ã„Ã…Ã‹ÃˆÃ’Ãœ ÃÃ€ ÃÃŽÃ‹Ãœ ÃÃ…Ã‹ÃœÃ‡ÃŸ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 
 	switch (operation)
 	{
@@ -20,7 +20,7 @@ double clac(double num1, double num2, char operation) {
 		return z;
 	}
 	case '#': return num1 + num2*4;
-	default: cout << "âû íå îøèáêà";
+	default: cout << "Ã¢Ã» Ã­Ã¥ Ã®Ã¸Ã¨Ã¡ÃªÃ ";
 	}
 }
 int main() {
@@ -33,10 +33,10 @@ int main() {
 	double num1;
 	double num2;
 	char operation;
-	cout << "\t\t[-=-]Êàëüêóëÿòîð[-=-]\n\n";
-	cout << "\tÂâåäèòå âûðaæåíèå - ";
+	cout << "\t\t[-=-]ÃŠÃ Ã«Ã¼ÃªÃ³Ã«Ã¿Ã²Ã®Ã°[-=-]\n\n";
+	cout << "\tÃ‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¢Ã»Ã°aÃ¦Ã¥Ã­Ã¨Ã¥ - ";
 	cin >> num1 >> operation >> num2;
-	cout << "\n\tÂîò îòâåò íà âàøå âûðîæåíèå - " << clac(num1, num2, operation);
+	cout << "\n\tÃ‚Ã®Ã² Ã®Ã²Ã¢Ã¥Ã² Ã­Ã  Ã¢Ã Ã¸Ã¥ Ã¢Ã»Ã°Ã®Ã¦Ã¥Ã­Ã¨Ã¥ - " << clac(num1, num2, operation);
 
 	int _; cin >> _;
 	return 0;
