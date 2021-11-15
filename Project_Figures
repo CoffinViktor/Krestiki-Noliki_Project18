@@ -1,0 +1,258 @@
+
+	cout << "\tПостройка фигур" << endl;
+	int lenght;
+	int wide;
+	char intexrure;
+	int selectf;
+	char texture;
+	int direction;
+	cout << "[~]Выберите из предлогаемых фигур : " << endl;
+	cout << "[1] - Линия" << endl;
+	cout << "[2] - Квадрат" << endl;
+	cout << "[3] - Прямоугольник" << endl;
+	cout << "[4] - Триугольник \n";
+	cout << "[5] - Крестик \n";
+	cout << "[6] - Плюсик \n";
+	cout << "[7] - Решетка \n";
+
+	cout << "Ваш выбор - ";
+	cin >> selectf;
+
+	if (selectf == 1) {
+		int iforsw = 1;
+		clear;
+		cout << "Вы выбрали фигуру 'Линия' " << endl;
+		cout << "Далее выберите ее.." <<endl;
+		cout << "Длинну - ";
+		cin >>lenght;
+		if (cin.fail()) {
+			clear;
+			figure();
+		}
+		cout << endl << "Текстуру - ";
+		cin >> texture;
+		cout << endl << "И смое глваное, направление линии!"<<endl;
+		cout << "[1] - Вертикальная" << endl;
+		cout << "[2] - Горизонтальная" << endl;
+		cout << "Вы выбрали.. - " ;
+		cin >> direction;
+		clear;
+		cout << endl << "\t\tВот ваша линия !"<<endl<<endl<<endl;
+		switch (direction)
+		{
+		case 1: {
+			while (iforsw <= lenght) {
+				cout << texture << endl;
+				iforsw++;
+			}
+			break;
+			}
+		case 2: {
+			while (iforsw <= lenght) {
+				cout << texture;
+				iforsw++;
+			}
+			break;
+		}
+		default:
+			break;
+		}
+
+        
+	}
+	else if(selectf == 2){
+		clear;
+		cout << "Вы выбрали фигуру 'Квадрат' " << endl;
+		cout << "Далее выберите его.." << endl;
+		cout << "Размер - ";
+		cin >> lenght;
+		if (cin.fail()) {
+			clear;
+			figure();
+		}
+		cout << endl << "Текстуру - ";
+		cin >> texture;
+		cout << "\nВыберете заполнение квадрата(Выберите 0, если не хотите заполнять) - ";
+		cin >> intexrure;
+		cout << "\n\t\t  Вот ваш квадрат! \n\n";
+		for (int y = 0; y < lenght; y++) {
+			cout << "\t\t";
+			for (int x = 0; x < lenght; x++) {
+				if (x == 0 || x == lenght - 1 || y == 0 || y == lenght - 1) {
+
+					cout << texture << " ";
+
+				}else if (intexrure != '0') {
+					cout << intexrure << " ";
+				}
+				else {
+					cout << " ";
+				}
+			}
+			cout << "\n";
+		}
+	}
+	else if (selectf == 3) {
+		clear;
+		cout << "Вы выбрали фигуру 'Прямоугольник' " << endl;
+		cout << "Далее выберите его.." << endl;
+		cout << "Длинну - ";
+		cin >> lenght;
+		cout << "Ширину - ";
+		cin >> wide;
+		if (cin.fail()) {
+			clear;
+			figure();
+		}
+		cout << endl << "Текстуру - ";
+		cin >> texture;
+		cout << "\nВыберете заполнение прямоугольника(Выберите 0, если не хотите заполнять) - ";
+		cin >> intexrure;
+		cout << "\n\t\t  Вот ваш Прямоугольник! \n\n";
+		for (int y = 0; y < wide; y++) {
+			cout << "\t\t";
+			for (int x = 0; x < lenght; x++) {
+				if (x == 0 || x == lenght - 1 ||
+					y == 0 || y == wide - 1) {
+
+					cout << texture << " ";
+
+				}
+				else if (intexrure != '0') {
+					cout << intexrure << " ";
+				}
+				else {
+					cout << "  ";
+				}
+			}
+			cout << "\n";
+		}
+	}
+	else if (selectf == 4) {
+	clear;
+	int counter = 0;
+	int i = 1;
+	cout << "\tВы выбрали фигуру 'Триугольник'!\n\n";
+	cout << "Введите размер стороны триугольника ! - ";
+	cin >> lenght;
+	cout << "Введите текстуру стороны триугольника! - ";
+	cin >> texture;
+	cout << "Выберите символ заполнения(0 - нет, иначе выбранный символ будет заполнением) - ";
+	cin >> intexrure;
+	cout << "\t Вот ваш триугольник! \n\n";
+	for (int y = 0; y < lenght; y++) {
+		cout << "\t\t";
+		for (int x = 0; x < lenght; x++) {
+			if (y == 0 && x == lenght / 2 || x == lenght / 2 - counter && y == counter || x == lenght / 2 + counter && y == counter || y == lenght / 2) {
+
+				cout << texture << " ";
+
+			}else if 
+				(
+					y == counter && x == lenght / 2 && y < lenght / 2 ||
+					//y == counter && y != 0 && x == lenght / 2 + counter - (counter - 1) && y < lenght / 2 ||
+					y == counter && y != 0 && x == (lenght / 2 - counter) + i && y < lenght / 2  //||
+
+
+				)				
+			{
+				cout << intexrure << " ";
+			}
+			else {
+				cout << "  ";
+			}
+		}
+		counter++;
+		i++;
+		cout << "\n";
+	}
+
+}
+	else if (selectf == 5) {
+	clear;
+	cout << "Вы выбрали фигуру 'крестик'! \n";
+	cout << "Далее выберите его.." << endl;
+	cout << "Размер (должен быть нечетным)- ";
+	cin >> lenght;
+	if (lenght % 2 != 1) {
+		clear;
+		figure();
+	}
+	cout << endl << "Текстуру - ";
+	cin >> texture;
+	clear;
+	cout << "\t\tВот ваш крестик!\n\n";
+	int i = 0;
+	for (int y = 0; y < lenght; y++) {
+		cout << "\t";
+		for (int x = 0; x < lenght; x++) {
+			if (x == y && y !=0 || x == lenght - y ) {
+				cout << texture << " ";
+			}
+			else {
+				cout << "  ";
+			}
+		}
+		i++;
+		cout << "\n";
+	}
+	
+}
+	else if (selectf == 6) {
+		clear;
+		cout << "Вы выбрали фигуру 'плюсик'! \n";
+		cout << "Далее выберите его.." << endl;
+		cout << "Размер (должен быть нечетным)- ";
+		cin >> lenght;
+		if (lenght % 2 != 1) {
+			clear;
+			figure();
+		}
+		cout << endl << "Текстуру - ";
+		cin >> texture;
+		clear;
+		cout << "\tВот ваш плюсик!\n\n";
+		int i = 0;
+		for (int y = 0; y < lenght; y++) {
+		//	cout << "\t";
+			for (int x = 0; x < lenght; x++) {
+				if (y == lenght/2 || x == lenght/2) {
+					cout << texture << " ";
+				}
+				else
+				{
+					cout << "- ";
+				}
+			}
+			i++;
+			cout << "\n";
+		}
+	}
+	else if (selectf == 7) {
+	clear
+	cout << "Вы выбрали фигуру 'Решетка'!\n";
+	cout << "\nВыбирите размер решетки(должна быть нечетной) - ";
+	cin >> lenght;
+	if (lenght % 2 == 0) {
+		clear;
+		figure();
+	}
+	cout << "\nВыберите текcтуру самой решетки - ";
+	cin >> texture;
+	cout << "\nВыберите текстуру фона решетки - ";
+	cin >> intexrure;
+	clear;
+	cout << "\t Вот ваша решетка! \n\n";
+	for (int y = 0; y < lenght; y++) {
+		cout << "\t";
+		for (int x = 0; x < lenght; x++) {
+			if (x%2 != 0 || y%2 != 0) {
+				cout << texture << " ";
+			}
+			else {
+				cout << intexrure << " ";
+			}
+		}
+		cout << "\n";
+	}
+}
