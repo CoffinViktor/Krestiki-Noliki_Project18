@@ -1,0 +1,40 @@
+double num1;
+	double num2;
+	double result;
+	char operation;
+
+	cout << "Калькулятор.";
+	cout << endl << "Введите число: ";
+	cin >> num1;
+	cout << endl << "Введите второе число: ";
+	cin >> num2;
+	cout << endl << "Введите операцию ";
+	cin >> operation;
+
+	if (operation == '+') {
+		result = num1 + num2;
+		cout << num1 << operation << num2 << "=" << result;
+	}
+	else if (operation == '-') {
+		result = num1 - num2;
+		cout << num1 << operation << num2 << "=" << result;
+	}
+	else if (operation == '*')
+	{
+		result = num1 * num2;
+		cout << num1 << operation << num2 << "=" << result;
+	}
+	else if (operation == '/' && num2 != 0) {
+		result = num1 / num2;
+		cout << num1 << operation << num2 << "=" << result;
+	}
+	else if (operation == '/' && num2 == 0) {
+		cout << "Нельзя делить на ноль !";
+	}
+	else if (operation == '%') {
+		result = int(num1) % int(num2);
+		cout << num1 << operation << num2 << "=" << result;
+	}
+	else {
+		cout << "Вы не ввели неккоректрые данные !"; 
+	}
