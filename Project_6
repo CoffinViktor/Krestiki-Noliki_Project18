@@ -1,3 +1,11 @@
+#include <iostream>
+using namespace std;
+#define clear system ("cls");	
+	
+int main() {
+	
+	setlocale(0, "");
+	
 	int time;
 	int day;
 
@@ -1260,3 +1268,4 @@
 		cout << "Вы выбрали неверное значение ";
 		break;
 	}
+}
