@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #define clear system ("cls");
-void menu_functions();
+int menu_functions();
 void clearconsol() {
 	clear;
 }
@@ -204,7 +204,8 @@ void kvadrat5x5() {
 		kvadrat5x5();
 	}
 }
-void menu_functions() {
+int menu_functions() {
+setlocale (0, "");
 	int select;
 	cout << "\tМеню функций\n";
 	cout << "\t[1] - Очищение консоли\n";
